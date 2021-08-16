@@ -36,7 +36,7 @@ function App() {
   return (
     <>
       <button data-testid="undoButton" onClick={undo}>undo</button>
-      <button onClick={redo}>redo</button>
+      <button data-testid="redoButton" onClick={redo}>redo</button>
       <input data-testid="colorInput"
         type="color"
         value={current}
