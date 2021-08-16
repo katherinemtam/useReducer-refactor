@@ -37,12 +37,12 @@ function App() {
     <>
       <button onClick={undo}>undo</button>
       <button onClick={redo}>redo</button>
-      <input
+      <input data-testid="colorInput"
         type="color"
         value={current}
         onChange={({ target }) => record(target.value)}
       />
-      <div
+      <div data-testid="display"
         style={{ backgroundColor: current, width: '10rem', height: '10rem' }}
       ></div>
     </>

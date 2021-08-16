@@ -1,11 +1,17 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 
 describe('App component', () => {
-  afterEach(() => cleanup());
-  it('renders App', () => {
-    const { asFragment } = render(<App />);
-    expect(asFragment()).toMatchSnapshot();
+  it('renders App and displays colors', () => {
+    render(<App />);
+  
+    const display = screen.getByTestId('display');
+
+    //test colorInput
+    const colorInput = screen.getByTestId('colorInput');
+    fireEvent.change(colorInput, { target: { value: '#58CCED' } });
+    expect(display).toHaveStyle({ backgroundColor: '#58CCED' });
   });
 });
