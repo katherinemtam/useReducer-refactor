@@ -13,11 +13,13 @@ export const ReduxProvider = ({ reducer, initialState, children }) => {
   );
 };
 
+//using this hook will allow you to connect to reducer switch statements
 export const useDispatch = () => {
   const { dispatch } = useContext(ReduxContext);
   return dispatch;
 };
 
+//takes in a function
 export const useSelector = (selectorFn) => {
   const { state } = useContext(ReduxContext);
   return selectorFn(state);
