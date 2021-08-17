@@ -4,12 +4,8 @@ import { useDispatch, useSelector } from '../../state/ReduxProvider.jsx';
 import { selectCurrent } from '../../state/selectors.js';
 
 function App() {
-  // const before = useSelector(selectBefore);
   const current = useSelector(selectCurrent);
-  // const after = useSelector(selectAfter);
   const dispatch = useDispatch();
-
-  console.log('current', current);
 
   const undo = () => {
     dispatch(setUndo());
